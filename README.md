@@ -1,6 +1,6 @@
 ## gmod-shadowraze-notification
 ## The source code of the addon, posted in the Steam Workshop, which is available at the link below. https://steamcommunity.com/sharedfiles/filedetails/?id=2447382670
-#### The addon replaces notifications. Replaces the font with Trajan pro 3. The icon is replaced with the first Shadow Fiend skill - shadowraze.
+#### The addon replaces notifications. Replaces the font with Trajan pro 3. The icon is replaced with Shadow Fiend skill - shadowraze.
 ------------
 ### Demonstration
 ![Demonstration](https://steamuserimages-a.akamaihd.net/ugc/1713031691627918319/64C49F797EEB3CD3C682DA49EAD3515B133C8DC0/ "Demonstrationn")
