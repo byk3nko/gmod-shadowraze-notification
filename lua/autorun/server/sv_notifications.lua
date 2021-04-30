@@ -1,0 +1,1 @@
+resource.AddWorkshop( 650064006 )
