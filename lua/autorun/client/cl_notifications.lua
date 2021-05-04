@@ -1,3 +1,8 @@
+--[[ Made by kenko: http://steamcommunity.com/id/bykenko ]]--
+--[[ Last updated on 05.04.2021]] --
+-- convar settings
+CreateClientConVar( "notification_sound", 1, true, false, "Enable/Disable shadowraze sound" )
+
 -- new font - "trajan"
 surface.CreateFont( "Trajan", {
     font = "Trajan",
@@ -65,8 +70,10 @@ local function DrawNotification( x, y, w, h, text, icon, col, progress )
 end
 
 function notification.AddLegacy( text, type, time )
-	surface.SetFont( "Trajan" )
+	if GetConVar( "DrawNotification" ):GetBool() then
 	surface.PlaySound( "shadowraze/shadowraze.wav", 100, math.random( 90,110 ), 0.5 )
+	else
+	surface.SetFont( "Trajan" )
 	local w = surface.GetTextSize( text ) + 20 + 32
 	local h = 32
 	local x = ScrW()
@@ -85,6 +92,7 @@ function notification.AddLegacy( text, type, time )
 
 		progress = nil,
 	} )
+	end
 end
 
 function notification.AddProgress( id, text, frac )
