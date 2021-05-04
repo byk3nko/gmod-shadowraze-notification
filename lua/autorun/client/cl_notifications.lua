@@ -40,13 +40,6 @@ Icons[ NOTIFY_CLEANUP ] = Material( "notifications/cleanup.png" )
 
 local LoadingIcon = Material( "notifications/loading.png" )
 local Notifications = {}
-local function addNotification( msgText, msgType, msgTime )
-
-	if IsValid( LocalPlayer() ) then
-		LocalPlayer():EmitSound( "shadowraze/shadowraze.wav", 100, math.random( 90,110 ), 0.5 )
-	end
-
-end
 
 local function DrawNotification( x, y, w, h, text, icon, col, progress )
 	draw.RoundedBoxEx( 4, x, y, w, h, BackgroundColor, false, true, false, true )
@@ -72,7 +65,7 @@ end
 
 function notification.AddLegacy( text, type, time )
 	surface.SetFont( "Trajan" )
-
+	surface.PlaySound( "shadowraze/shadowraze.wav", 100, math.random( 90,110 ), 0.5 )
 	local w = surface.GetTextSize( text ) + 20 + 32
 	local h = 32
 	local x = ScrW()
@@ -132,14 +125,13 @@ function notification.Kill( id )
 	end
 end
 
+
 hook.Add( "HUDPaint", "DrawNotifications", function()
 	for k, v in ipairs( Notifications ) do
 		DrawNotification( math.floor( v.x ), math.floor( v.y ), v.w, v.h, v.text, v.icon, v.col, v.progress )
-
 		v.x = Lerp( FrameTime() * 10, v.x, v.time > CurTime() and ScrW() - v.w - 10 or ScrW() + 1 )
 		v.y = Lerp( FrameTime() * 10, v.y, ScreenPos - ( k - 1 ) * ( v.h + 5 ) )
 	end
-	addNotification()
 	for k, v in ipairs( Notifications ) do
 		if v.x >= ScrW() and v.time < CurTime() then
 			table.remove( Notifications, k )
