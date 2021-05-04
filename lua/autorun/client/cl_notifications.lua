@@ -1,3 +1,4 @@
+-- new font - "trajan"
 surface.CreateFont( "Trajan", {
     font = "Trajan",
     font = "Trajan pro 3",
@@ -16,7 +17,7 @@ surface.CreateFont( "Trajan", {
     additive = false,
     outline = false,
 })
-
+-- config
 local ScreenPos = ScrH() - 200
 
 local ForegroundColor = Color( 230, 230, 230 )
@@ -40,7 +41,7 @@ Icons[ NOTIFY_CLEANUP ] = Material( "notifications/cleanup.png" )
 
 local LoadingIcon = Material( "notifications/loading.png" )
 local Notifications = {}
-
+-- notifcation
 local function DrawNotification( x, y, w, h, text, icon, col, progress )
 	draw.RoundedBoxEx( 4, x, y, w, h, BackgroundColor, false, true, false, true )
 
