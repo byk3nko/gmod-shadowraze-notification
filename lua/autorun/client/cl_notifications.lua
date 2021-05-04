@@ -1,5 +1,5 @@
 --[[ Made by kenko: http://steamcommunity.com/id/bykenko ]]--
---[[ Last updated on 05.04.2021]] --
+--[[ Last updated on 04.05.2021]] --
 -- convar settings
 CreateClientConVar( "notification_sound", 1, true, false, "Enable/Disable shadowraze sound" )
 
